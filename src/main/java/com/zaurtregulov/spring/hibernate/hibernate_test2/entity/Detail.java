@@ -18,10 +18,13 @@ public class Detail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
+	
 	@Column(name="city")
 	private String city;
+	
 	@Column(name="phone_number")
-	private int phoneNumber;
+	private String phoneNumber;
+	
 	@Column(name="email")
 	private String email;
 
@@ -29,7 +32,7 @@ public class Detail {
 		
 	}
 	
-	public Detail(String city, int phoneNumber, String email) {
+	public Detail(String city, String phoneNumber, String email) {
 		this.city = city;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
@@ -51,11 +54,11 @@ public class Detail {
 		this.city = city;
 	}
 
-	public int getphoneNumber() {
+	public String getphoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setphoneNumber(int phoneNumber) {
+	public void setphoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -70,6 +73,6 @@ public class Detail {
 	@Override
 	public String toString() {
 		return "Detail [id=" + id + ", city=" + city + ", phoneNumber=" + phoneNumber + ", email=" + email
-				+ ", empDetail=" + empDetail + "]";
+				+ "]";
 	}
 }
