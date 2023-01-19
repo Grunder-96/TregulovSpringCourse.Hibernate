@@ -1,12 +1,13 @@
 package com.zaurtregulov.spring.hibernate.hibernate_test2.entity;
 
+import com.zaurtregulov.spring.hibernate.hibernate_test2.Employee;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -27,6 +28,9 @@ public class Detail {
 	
 	@Column(name="email")
 	private String email;
+	
+	@OneToOne(mappedBy="empDetail", cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+	private Employee employee;
 
 	public Detail() {
 		
@@ -54,11 +58,11 @@ public class Detail {
 		this.city = city;
 	}
 
-	public String getphoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setphoneNumber(String phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -68,6 +72,14 @@ public class Detail {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 
 	@Override
