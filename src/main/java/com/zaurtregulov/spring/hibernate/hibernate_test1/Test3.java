@@ -1,4 +1,4 @@
-package com.zaurtregulov.spring.hibernate.entity;
+package com.zaurtregulov.spring.hibernate.hibernate_test1;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Test5 {
+public class Test3 {
 	
 	public static void main(String[] args) {
 		
@@ -19,11 +19,16 @@ public class Test5 {
 			Session session = factory.getCurrentSession();
 			session.beginTransaction();
 			
-//			Employee emp = session.get(Employee.class, 0);
-//			session.remove(emp);
-			session.createMutationQuery("delete Employee where name = 'Aleksandr'").executeUpdate();
+			List<Employee> emps = session
+					.createSelectionQuery("from Employee where name = 'Aleksandr' and salary > 65000", Employee.class)
+					.getResultList();
+			
+			for (Employee e : emps) {
+				System.out.println(e);
+			}
 			
 			session.getTransaction().commit();
+			
 			System.out.println("Done!");
 		} finally {
 			factory.close();

@@ -1,12 +1,11 @@
-package com.zaurtregulov.spring.hibernate.entity;
+package com.zaurtregulov.spring.hibernate.hibernate_test1;
 
-import java.util.List;
-
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class Test4 {
+public class Test1 {
 	
 	public static void main(String[] args) {
 		
@@ -17,16 +16,13 @@ public class Test4 {
 		
 		try {
 			Session session = factory.getCurrentSession();
+			Employee emp = new Employee("Aleksandr", "Ivanov", "IT", 65000);
 			session.beginTransaction();
-			
-//			Employee emp = session.get(Employee.class, 0);
-//			emp.setSalary(280000);
-
-			session.createMutationQuery("update Employee set salary = 150000 where name = 'Aleksandr'").executeUpdate();
-
-			
+			session.persist(emp);
 			session.getTransaction().commit();
+			
 			System.out.println("Done!");
+			System.out.println(emp);
 		} finally {
 			factory.close();
 		}

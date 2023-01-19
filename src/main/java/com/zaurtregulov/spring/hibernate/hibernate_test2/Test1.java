@@ -1,4 +1,4 @@
-package com.zaurtregulov.spring.hibernate.entity;
+package com.zaurtregulov.spring.hibernate.hibernate_test2;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
