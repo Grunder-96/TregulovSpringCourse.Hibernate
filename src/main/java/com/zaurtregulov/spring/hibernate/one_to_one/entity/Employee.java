@@ -1,6 +1,4 @@
-package com.zaurtregulov.spring.hibernate.hibernate_test2;
-
-import com.zaurtregulov.spring.hibernate.hibernate_test2.entity.Detail;
+package com.zaurtregulov.spring.hibernate.one_to_one.entity;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;

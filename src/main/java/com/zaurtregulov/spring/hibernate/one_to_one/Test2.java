@@ -1,10 +1,12 @@
-package com.zaurtregulov.spring.hibernate.hibernate_test2;
+package com.zaurtregulov.spring.hibernate.one_to_one;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import com.zaurtregulov.spring.hibernate.hibernate_test2.entity.Detail;
+
+import com.zaurtregulov.spring.hibernate.one_to_one.entity.Detail;
+import com.zaurtregulov.spring.hibernate.one_to_one.entity.Employee;
 
 public class Test2 {
 	
